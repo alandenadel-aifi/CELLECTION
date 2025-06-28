@@ -1,1 +1,1 @@
-# CellECTION: a MIL model to predict emergent phenotypes from single cell populations
+# CellECTION: An Attention-Based Multiple Intance Learning Model to Predict Emergent Phenotypes from Single Cell Populations

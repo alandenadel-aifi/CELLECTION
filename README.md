@@ -1,4 +1,4 @@
-# CellECTION: An Attention-Based Multiple Intance Learning Model to Predict Emergent Phenotypes from Single Cell Populations
+# CellECTION: An Attention-Based Multiple Instance Learning Approach to Predict Emergent Phenotypes from Single Cell Populations
 
 developed by Hongru Hu: hrhu@ucdavis.edu
 

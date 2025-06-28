@@ -1,6 +1,6 @@
 # CellECTION: An Attention-Based Multiple Intance Learning Model to Predict Emergent Phenotypes from Single Cell Populations
 
-developed by Hongru Huhr: hu@ucdavis.edu
+developed by Hongru Hu: hrhu@ucdavis.edu
 
 ![alt text](https://github.com/quon-titative-biology/CELLECTION/blob/main/img/CellECTIVE.png)
 

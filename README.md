@@ -1,8 +1,10 @@
 # CellECTION: An Attention-Based Multiple Intance Learning Model to Predict Emergent Phenotypes from Single Cell Populations
 
+developed by Hongru Huhr: hu@ucdavis.edu
+
 ![alt text](https://github.com/quon-titative-biology/CELLECTION/blob/main/img/CellECTIVE.png)
 
-
+Biological systems exhibit emergent phenotypes that arise from the collective behavior of individual components, such as whole-organ functions that arise from the coordinated activity of its individual cells, or organism-level phenotypes that result from the functional interplay of collections of genes in the genome. We present CELLECTION, a deep learning framework that learns to associate subgroups of instances with different emergent phenotypes. We show CELLECTION enables interpretable predictions for heterogeneous tasks, including disease classification, identification of disease-associated cell subtypes, alignment of developmental stages between human model systems, and even predicting relative hand-wing indices across the avian lineage. CELLECTION therefore provides a scalable and flexible framework for identifying key cellular or genetic signatures underlying complex traits in development, disease, and evolution.
 
 ---
 ### Package installation

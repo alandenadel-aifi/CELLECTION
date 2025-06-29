@@ -17,12 +17,6 @@ You can install CELLECTION from PyPI:
 pip install cellection
 ```
 
-For full functionality including additional bioinformatics tools:
-
-```bash
-pip install cellection[full]
-```
-
 Or install from source:
 
 ```bash
@@ -31,9 +25,12 @@ cd CELLECTION
 pip install -e .
 ```
 
+We suggest using 
+`pip3 install torch==2.4.1 torchvision==0.19.1 torchaudio==2.4.1 --index-url https://download.pytorch.org/whl/test/cu118`
+
 ---
 ### Package requirements
-scPair is implemented using `torch 2.4.1`, `anndata 0.10.9`, and `scanpy 1.10.3`  under `Python 3.10.15`. 
+CELLECTION is implemented using `torch 2.4.1`, `anndata 0.10.9`, and `scanpy 1.10.3`  under `Python 3.10.15`. 
 
 Users can choose to create the environment provided under this repository [(env file)](https://github.com/quon-titative-biology/CELLECTION/blob/main/environment.yml):
 ```command line

@@ -20,9 +20,9 @@ def read_requirements():
 setup(
     name="cellection",
     version="0.1.0",
-    author="Quon-titative Biology Lab",
-    author_email="your.email@example.com",
-    description="A deep learning framework for cell classification using Multiple Instance Learning",
+    author="Hongru Hu",
+    author_email="hrhu@ucdavis.edu",
+    description="An Attention-Based Multiple Instance Learning Approach to Predict Emergent Phenotypes from Single Cell Populations",
     long_description=read_readme(),
     long_description_content_type="text/markdown",
     url="https://github.com/quon-titative-biology/CELLECTION",

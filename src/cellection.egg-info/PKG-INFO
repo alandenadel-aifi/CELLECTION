@@ -1,0 +1,155 @@
+Metadata-Version: 2.4
+Name: cellection
+Version: 0.1.0
+Summary: A deep learning framework for cell classification using Multiple Instance Learning
+Home-page: https://github.com/quon-titative-biology/CELLECTION
+Author: Quon-titative Biology Lab
+Author-email: Quon-titative Biology Lab <your.email@example.com>
+Maintainer-email: Quon-titative Biology Lab <your.email@example.com>
+License: MIT
+Project-URL: Homepage, https://github.com/quon-titative-biology/CELLECTION
+Project-URL: Documentation, https://github.com/quon-titative-biology/CELLECTION#readme
+Project-URL: Repository, https://github.com/quon-titative-biology/CELLECTION
+Project-URL: Bug Tracker, https://github.com/quon-titative-biology/CELLECTION/issues
+Keywords: deep-learning,cell-classification,bioinformatics,machine-learning,multiple-instance-learning,pointnet
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Topic :: Scientific/Engineering :: Bio-Informatics
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: torch>=2.0.0
+Requires-Dist: torchvision>=0.15.0
+Requires-Dist: numpy>=1.21.0
+Requires-Dist: scipy>=1.7.0
+Requires-Dist: scikit-learn>=1.0.0
+Requires-Dist: matplotlib>=3.5.0
+Requires-Dist: seaborn>=0.11.0
+Requires-Dist: pandas>=1.3.0
+Requires-Dist: tqdm>=4.60.0
+Requires-Dist: scanpy>=1.10.0
+Requires-Dist: anndata>=0.10.0
+Requires-Dist: pytorch-lightning>=1.9.0
+Requires-Dist: torchmetrics>=1.4.0
+Provides-Extra: dev
+Requires-Dist: pytest>=6.0; extra == "dev"
+Requires-Dist: pytest-cov>=2.0; extra == "dev"
+Requires-Dist: black>=21.0; extra == "dev"
+Requires-Dist: flake8>=3.8; extra == "dev"
+Provides-Extra: full
+Requires-Dist: scanpy>=1.10.0; extra == "full"
+Requires-Dist: anndata>=0.10.0; extra == "full"
+Requires-Dist: scvi-tools>=0.20.0; extra == "full"
+Requires-Dist: pytorch-lightning>=1.9.0; extra == "full"
+Requires-Dist: torchmetrics>=1.4.0; extra == "full"
+Dynamic: author
+Dynamic: home-page
+Dynamic: license-file
+Dynamic: requires-python
+
+# CELLECTION
+
+A deep learning framework for cell classification using Multiple Instance Learning (MIL) with PointNet architecture.
+
+## Installation
+
+You can install CELLECTION from PyPI:
+
+```bash
+pip install cellection
+```
+
+For full functionality including additional bioinformatics tools:
+
+```bash
+pip install cellection[full]
+```
+
+Or install from source:
+
+```bash
+git clone https://github.com/quon-titative-biology/CELLECTION.git
+cd CELLECTION
+pip install -e .
+```
+
+## Quick Start
+
+```python
+import cellection
+import scanpy as sc
+
+# Load your single-cell data
+adata = sc.read_h5ad("your_data.h5ad")
+
+# Initialize CELLECTION object
+cellection_obj = cellection.cellectiion_object(
+    adata=adata,
+    task_type='classification',
+    task_key='cell_type',
+    sample_key='sample_id',
+    batch_key='batch',
+    model_type='classification',
+    input_type='measurement',
+    InstanceEncoder=True,
+    seed=42
+)
+
+# Prepare the data
+cellection_obj.prepare()
+
+# Train the model
+cellection_obj.train()
+
+# Perform inference
+sample_meta, true_labels, pred_labels, embeddings, global_features, attention_scores = cellection_obj.inference()
+```
+
+## Features
+
+- **Multiple Instance Learning (MIL)**: Framework for learning from bags of instances
+- **PointNet Architecture**: Implementation of PointNet for point cloud classification
+- **Cell Classification**: Specialized for biological cell classification tasks
+- **Attention Mechanisms**: Multiple aggregation methods including gated attention
+- **Batch Effect Correction**: Built-in support for batch effect handling
+- **Flexible Input**: Support for both measurement data and pre-computed features
+
+## Key Components
+
+- **CellEncoder**: Encodes individual cell features
+- **PointNetClassHead**: Main classification head using PointNet architecture
+- **Multiple Aggregation Methods**: max, mean, sum, attention, gated_attention
+- **Loss Functions**: Classification, regression, and ordinal regression losses
+
+## Documentation
+
+For detailed documentation and examples, please visit the [GitHub repository](https://github.com/quon-titative-biology/CELLECTION).
+
+## Citation
+
+If you use CELLECTION in your research, please cite:
+
+```bibtex
+@software{cellection2024,
+  title={CELLECTION: A Deep Learning Framework for Cell Classification using Multiple Instance Learning},
+  author={Quon-titative Biology Lab},
+  year={2024},
+  url={https://github.com/quon-titative-biology/CELLECTION}
+}
+```
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request. 

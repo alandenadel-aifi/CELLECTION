@@ -47,6 +47,10 @@ conda env create --file=environment.yml
 ```python
 import cellection
 import scanpy as sc
+import torch
+import torch.nn as nn
+import matplotlib.pyplot as plt
+import seaborn as sns
 
 # Load your single-cell data
 adata = sc.read_h5ad("your_data.h5ad")

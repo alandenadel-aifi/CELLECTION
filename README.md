@@ -89,6 +89,8 @@ cellection_obj.train()
 # Perform inference
 sample_meta, true_labels, pred_labels, sample_embeddings, sample_global_features, attention_scores = cellection_obj.inference()
 ```
+please go to tutorial for [a real data-based example ](https://github.com/quon-titative-biology/CELLECTION/tree/main/tutorials)
+
 
 
 ## Features

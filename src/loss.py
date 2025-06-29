@@ -17,8 +17,27 @@ from torch.utils.data import TensorDataset
 from torch.utils.data import DataLoader, Dataset
 
 
+class ClassificationLoss(nn.Module):
+    def __init__(self, num_class):
+        super().__init__()
+        self.num_classes = num_class
+    def forward(self, pred, label):
+        return nn.CrossEntropyLoss()(pred, label)
+
+
+transformation_function = nn.Softmax(dim=1)
+
+
+class RegressionLoss(nn.Module):
+    def __init__(self, num_class):
+        super().__init__()
+        self.num_classes = num_class
+    def forward(self, pred, label):
+        return nn.MSELoss()(pred, label)
+
+
 class OrdinalRegressionLoss(nn.Module):
-    def __init__(self, num_class, train_cutpoints=False, scale=20.0):
+    def __init__(self, num_class, scale=20.0, train_cutpoints=False):
         super().__init__()
         self.num_classes = num_class
         num_cutpoints = self.num_classes - 1

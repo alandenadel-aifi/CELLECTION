@@ -19,9 +19,6 @@ import torch.nn.functional as F
 from torch.utils.data import Dataset, DataLoader, random_split
 
 
-# ===========================
-# Creating MIL Dataset from Ns_df, Ys_df, and metadata
-# ===========================
 def Create_MIL_Dataset(ins_df, label_df, metadata, bag_column):
     """
     Create a Multiple Instance Learning (MIL) dataset from a dataframe of instances, labels, and metadata.
@@ -46,8 +43,8 @@ def Create_MIL_Dataset(ins_df, label_df, metadata, bag_column):
     for bag_id, indices in bags.items():
         Xs.append(ins_df.loc[indices].values.astype(np.float32))
         Ys.append(label_df.loc[indices].values[0])  # Assuming label is the same for all instances in a bag
-        ins.append(len(indices))  # Number of instances in each bag
-        metadata_indices.append(indices)  # Save metadata indices for each bag
+        ins.append(len(indices))                    # Number of instances in each bag
+        metadata_indices.append(indices)            # Save metadata indices for each bag
     return Xs, np.array(Ys), ins, metadata_indices
 
 
@@ -75,10 +72,10 @@ class MILDataset(Dataset):
             ins_ct (int): Number of instances in the bag.
             metadata_idx (list): List of metadata indices for the bag.
         """
-        bag = torch.FloatTensor(self.Xs[idx]).to(self.device)  # Convert bag to tensor and move to device
-        label = torch.tensor(self.Ys[idx], dtype=torch.long).to(self.device)  # Convert label to tensor and move to device
-        ins_ct = self.ins[idx]  # Number of instances in the bag
-        metadata_idx = self.metadata_indices[idx]  # Metadata indices for the bag
+        bag = torch.FloatTensor(self.Xs[idx]).to(self.device)                   # Convert bag to tensor and move to device
+        label = torch.tensor(self.Ys[idx], dtype=torch.long).to(self.device)    # Convert label to tensor and move to device
+        ins_ct = self.ins[idx]                                                  # Number of instances in the bag
+        metadata_idx = self.metadata_indices[idx]                               # Metadata indices for the bag
         return bag, label, ins_ct, metadata_idx
 
 
@@ -95,8 +92,7 @@ def MIL_Collate_fn(batch):
     """
     bags, labels, ins, metadata_idx= zip(*batch)
     lengths = ins
-    max_length = max(ins)                            # Maximum number of instances in the batch
-    # Pad bags to the same length
+    max_length = max(ins)               # Set maximum number of instances in the batch for padding bags to the same length
     padded_bags = torch.zeros((len(bags), max_length, bags[0].shape[1]), dtype=torch.float32)
     for i, bag in enumerate(bags):
         padded_bags[i, :len(bag)] = bag
@@ -104,3 +100,15 @@ def MIL_Collate_fn(batch):
     return padded_bags.to(device), labels.to(device), lengths, metadata_idx
 
 
+def MIL_Collate_fn_CPU_Inference(batch):
+    """
+    Similar to MIL_Collate_fn, but during inference, we have option to switch to CPU
+    """
+    bags, labels, ins, metadata_idx= zip(*batch)
+    lengths = ins
+    max_length = max(ins)                            
+    padded_bags = torch.zeros((len(bags), max_length, bags[0].shape[1]), dtype=torch.float32)
+    for i, bag in enumerate(bags):
+        padded_bags[i, :len(bag)] = bag
+    labels = torch.stack(labels)        
+    return padded_bags.to('cpu'), labels.to('cpu'), lengths, metadata_idx

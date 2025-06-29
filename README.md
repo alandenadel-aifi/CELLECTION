@@ -95,17 +95,13 @@ sample_meta, true_labels, pred_labels, sample_embeddings, sample_global_features
 
 
 ## Features
-
-- **Multiple Instance Learning (MIL)**: Framework for learning from bags of instances
-- **PointNet Architecture**: Implementation of PointNet for point cloud classification
-- **Cell Classification**: Specialized for biological cell classification tasks
-- **Attention Mechanisms**: Multiple aggregation methods including gated attention
-- **Batch Effect Correction**: Built-in support for batch effect handling
+- **Phenotype Prediction**: Specialized for sample-level phenotype prediction
+- **Multiple Instance Learning (MIL)**: Framework for learning from bags of instances (cells)
+- **Attention Mechanisms**: Multiple aggregation methods including gated attention and attention (in addition to pooling) to prioritize cells 
 - **Flexible Input**: Support for both measurement data and pre-computed features
 
 
 ## Citation
-
 If you use CELLECTION in your research, please cite:
 
 ```bibtex
@@ -116,6 +112,7 @@ If you use CELLECTION in your research, please cite:
   url={https://github.com/quon-titative-biology/CELLECTION}
 }
 ```
+and our preprint:
 
 ## License
 

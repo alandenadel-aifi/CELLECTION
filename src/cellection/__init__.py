@@ -1,5 +1,5 @@
 """
-CELLECTION: A deep learning framework for cell classification using Multiple Instance Learning
+CELLECTION: A deep learning framework for phenotype prediction using Multiple Instance Learning
 """
 
 from __future__ import absolute_import

@@ -1,3 +1,5 @@
+[![PyPI version](https://img.shields.io/pypi/v/cellection.svg)](https://pypi.org/project/cellection/)
+
 # CellECTION: An Attention-Based Multiple Instance Learning Approach to Predict Emergent Phenotypes from Single Cell Populations
 
 developed by Hongru Hu: hrhu@ucdavis.edu

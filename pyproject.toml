@@ -5,16 +5,16 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "cellection"
 dynamic = ["version"]
-description = "A deep learning framework for cell classification using Multiple Instance Learning"
+description = "Predicting emergent phenotypes from single cell populations using CELLECTION"
 readme = "README.md"
 license = {text = "MIT"}
 authors = [
-    {name = "Quon-titative Biology Lab", email = "your.email@example.com"}
+    {name = "Hongru Hu", email = "hrhu.compbio@gmail.com"}
 ]
 maintainers = [
-    {name = "Quon-titative Biology Lab", email = "your.email@example.com"}
+    {name = "Hongru Hu", email = "hrhu.compbio@gmail.com"}
 ]
-keywords = ["deep-learning", "cell-classification", "bioinformatics", "machine-learning", "multiple-instance-learning", "pointnet"]
+keywords = ["deep-learning", "bioinformatics", "machine-learning", "multiple-instance-learning", "pointnet"]
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Intended Audience :: Science/Research",

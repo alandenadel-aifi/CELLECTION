@@ -7,7 +7,7 @@ def read_readme():
     if os.path.exists(readme_path):
         with open(readme_path, 'r', encoding='utf-8') as f:
             return f.read()
-    return "CELLECTION: A deep learning framework for cell classification using Multiple Instance Learning"
+    return "Predicting emergent phenotypes from single cell populations using CELLECTION"
 
 # Read requirements
 def read_requirements():
@@ -21,8 +21,8 @@ setup(
     name="cellection",
     version="0.1.0",
     author="Hongru Hu",
-    author_email="hrhu@ucdavis.edu",
-    description="An Attention-Based Multiple Instance Learning Approach to Predict Emergent Phenotypes from Single Cell Populations",
+    author_email="hrhu.compbio@gmail.com",
+    description="Predicting emergent phenotypes from single cell populations using CELLECTION",
     long_description=read_readme(),
     long_description_content_type="text/markdown",
     url="https://github.com/quon-titative-biology/CELLECTION",
@@ -58,7 +58,7 @@ setup(
             "torchmetrics>=1.4.0",
         ],
     },
-    keywords="deep-learning, cell-classification, bioinformatics, machine-learning, multiple-instance-learning, pointnet",
+    keywords="deep-learning, bioinformatics, machine-learning, multiple-instance-learning, pointnet",
     project_urls={
         "Bug Reports": "https://github.com/quon-titative-biology/CELLECTION/issues",
         "Source": "https://github.com/quon-titative-biology/CELLECTION",

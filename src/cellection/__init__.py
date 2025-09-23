@@ -7,7 +7,7 @@ from __future__ import division
 from __future__ import print_function
 
 # Version information
-__version__ = "0.1.0"
+__version__ = "0.1.2"
 
 # Import main classes and functions
 from .utils import (

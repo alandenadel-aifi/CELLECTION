@@ -19,7 +19,7 @@ def read_requirements():
 
 setup(
     name="cellection",
-    version="0.1.0",
+    version="0.1.2",
     author="Hongru Hu",
     author_email="hrhu.compbio@gmail.com",
     description="Predicting emergent phenotypes from single cell populations using CELLECTION",

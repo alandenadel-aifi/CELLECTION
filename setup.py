@@ -19,7 +19,7 @@ def read_requirements():
 
 setup(
     name="cellection",
-    version="0.1.2",
+    version="0.1.3",
     author="Hongru Hu",
     author_email="hrhu.compbio@gmail.com",
     description="Predicting emergent phenotypes from single cell populations using CELLECTION",
@@ -54,8 +54,6 @@ setup(
             "scanpy>=1.10.0",
             "anndata>=0.10.0",
             "scvi-tools>=0.20.0",
-            "pytorch-lightning>=1.9.0",
-            "torchmetrics>=1.4.0",
         ],
     },
     keywords="deep-learning, bioinformatics, machine-learning, multiple-instance-learning, pointnet",

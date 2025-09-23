@@ -99,9 +99,13 @@ class cellectiion_object():
             Ns = self.adata.X.copy()
             if self.sparse_input:
                 Ns = Ns.todense()
+            columns = self.adata.var.index.tolist()
+            if len(columns) != Ns.shape[1]:
+                columns = [f"gene_{i}" for i in range(Ns.shape[1])]
         else:
             Ns = self.adata.obsm[self.input_type].copy()
-        Ns_df = pd.DataFrame(Ns, index=metadata.index.tolist(), columns=self.adata.var.index.tolist())
+            columns = None
+        Ns_df = pd.DataFrame(Ns, index=metadata.index.tolist(), columns=columns)
         Ys_df = pd.get_dummies(self.adata.obs[self.task_key].copy()).astype(int)
         if self.batch_key is not None:
             batch_dummy = pd.get_dummies(self.adata.obs[self.batch_key].copy()).astype(int)

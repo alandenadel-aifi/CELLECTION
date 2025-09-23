@@ -103,6 +103,11 @@ please go to tutorial for [a real data-based example ](https://github.com/quon-t
 ## Citation
 If you use CELLECTION in your research, please cite:
 
+manuscript: [Predicting emergent phenotypes from single cell populations using CELLECTION](https://www.biorxiv.org/content/10.1101/2025.09.02.673886v1)
+```
+Hu, H., Sanghi, S. and Quon, G., 2025. Predicting emergent phenotypes from single cell populations using CELLECTION. bioRxiv, pp.2025-09.
+```
+and software:
 ```bibtex
 @software{cellection2025,
   title={Predicting emergent phenotypes from single cell populations using CELLECTION},

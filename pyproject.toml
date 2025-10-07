@@ -51,7 +51,7 @@ dev = [
 ]
 full = [
     "scanpy==1.10.3",
-    "anndata==0.10.9",
+    "anndata>=0.10.9",
     "scvi-tools>=0.20.0",
 ]
 

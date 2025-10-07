@@ -248,8 +248,8 @@ class cellectiion_object():
                     print(f"Early stopping at epoch {epoch+1}")
                     break
         if self.save_model:
-            self.pn_checkpoint = torch.load(self.save_path_temp + "/best_pn_" + self.task_key + '_' + str(self.seed) + ".pt", weights_only=True) 
-            self.enc_checkpoint = torch.load(self.save_path_temp + "/best_enc_" + self.task_key + '_' + str(self.seed) + ".pt", weights_only=True) if self.InstanceEncoder else None
+            self.pn_checkpoint = torch.load(self.save_path_temp + "/best_pn_" + self.task_key + '_' + str(self.seed) + ".pt", weights_only=False) 
+            self.enc_checkpoint = torch.load(self.save_path_temp + "/best_enc_" + self.task_key + '_' + str(self.seed) + ".pt", weights_only=False) if self.InstanceEncoder else None
         else:
             # Model is not saved, please check the save_model and save_path
             raise ValueError("Model is not saved, please check the save_model and save_path")
